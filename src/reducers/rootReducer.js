@@ -1,6 +1,5 @@
 import { combineReducers } from "redux";
 import { responsiveStateReducer } from 'redux-responsive';
-import { routerReducer } from 'react-router-redux';
 
 import { garagesReducer } from './garagesReducer';
 import { categoriesReducer } from './categoriesReducer';
@@ -15,7 +14,6 @@ const appReducer = combineReducers({
   reviews: reviewsReducer,
   garages: garagesReducer,
   lists: listsReducer,
-  router: routerReducer,
 });
 
 const rootReducer = (state, action) => appReducer(state, action);
