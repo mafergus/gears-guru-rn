@@ -1,0 +1,5 @@
+@font-face {
+    font-family: 'Good-Times'; /*a name to be used later*/
+    src: url('../assets/good-times.ttf');
+    -webkit-font-smoothing: antialiased;
+}

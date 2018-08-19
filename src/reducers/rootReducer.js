@@ -10,12 +10,12 @@ import { authedUserReducer } from './authedUserReducer';
 const appReducer = combineReducers({
   authedUser: authedUserReducer,
   browser: responsiveStateReducer,
-  categories: categoriesReducer,
+  categories: categoriesReducer,  
   reviews: reviewsReducer,
   garages: garagesReducer,
   lists: listsReducer,
 });
 
-const rootReducer = (state, action) => appReducer(state, action);
+ const rootReducer = (state, action) => appReducer(state, action);
 
 export default rootReducer;

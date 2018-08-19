@@ -1,32 +1,18 @@
 import React from 'react';
-import { StyleSheet, Platform, Image, Text, View, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, Image, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { StackNavigator, SwitchNavigator, createDrawerNavigator } from 'react-navigation';
 
-export default class MainScreen extends React.Component {
+import config from '../config';
+import { Post } from '../presentation';
+import { PostFeed } from '../containers';
 
-  constructor() {
-    super();
-
-    this.state = {
-      screenWidth: 0
-    };
-  }
-  
-  componentDidMount() {
-    this.setState({
-      screenWidth: Dimensions.get("window").width
-    });
-  }
+export default class Home extends React.Component {
 
   render() {
-    const { screenWidth } = this.state;
     const imageUri = "https://pbs.twimg.com/profile_images/965036344216039424/NQOVAYZ-_400x400.jpg";
 
     return (
       <View style={styles.container}>
-
-        <View style={styles.tempNav}>
-          <Text>Instagram</Text>
-        </View>
 
         <View style={styles.userBar}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -43,12 +29,8 @@ export default class MainScreen extends React.Component {
           </View>
         </View>
 
-        <Image
-          style={{ width: screenWidth, height: 100 }}
-          source={{
-            uri: imageUri
-          }}
-        />
+        <PostFeed />
+
       </View>
     );
   }
@@ -71,7 +53,7 @@ const styles = StyleSheet.create({
   },
   userBar: {
     width: "100%",
-    height: 50,
+    height: config.styleConstants.rowHeight,
     paddingHorizontal: 10,
     flexDirection: "row",
     backgroundColor: "white",
